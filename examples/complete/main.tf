@@ -66,6 +66,7 @@ module "alb_ingress" {
   default_target_group_enabled  = false
   target_group_arn              = module.alb.default_target_group_arn
   unauthenticated_listener_arns = [module.alb.http_listener_arn]
+  protocol_version              = var.protocol_version
 
   context = module.this.context
 }
